@@ -1,7 +1,7 @@
 .movies-card__delete-button {
   padding: 0;
   border: none;
-  background-color: #313131;
+  background-color: #222222;
   background-image: url(../../images/remove-icon.svg);
   background-repeat: no-repeat;
   background-position: center;

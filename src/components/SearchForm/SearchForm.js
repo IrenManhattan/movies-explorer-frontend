@@ -1,5 +1,5 @@
 import './SearchForm.css';
-import searchIcon from '../../images/search-icon.svg';
+//import searchIcon from '../../images/search-icon.svg';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 
 function SearchForm() {
@@ -15,11 +15,6 @@ function SearchForm() {
           />
         </div>
         <button type="submit" className="search-form__submit">
-          <img
-            className="search-form__submit-icon"
-            src={searchIcon}
-            alt="иконка стрелочка"
-          />
         </button>
       </form>
       <FilterCheckbox />

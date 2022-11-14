@@ -3,7 +3,7 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 
 function MoviesCardList({ moviesCardList, isMarked, isSaved }) {
   return (
-    <div className="movies-card-lis-container">
+    <div className="movies-card-list-container">
       <ul className="movies-card-list">
         {moviesCardList.map((moviesCard) => (
           <MoviesCard

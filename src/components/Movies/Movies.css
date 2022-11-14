@@ -6,8 +6,24 @@
   max-width: 1140px;
 }
 
+.movies__border {
+  margin: 0 70px;
+  border: 1px solid #424242;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 768px) {
   .movies {
     width: 92%;
+  }
+
+  .movies__border {
+    margin: 0 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .movies__border {
+    margin: 0 10px;
   }
 }

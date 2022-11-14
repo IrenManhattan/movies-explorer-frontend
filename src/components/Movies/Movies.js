@@ -17,6 +17,7 @@ function Movies() {
   return (
     <section className="movies">
       <SearchForm />
+      <div className='movies__border'></div>
       {!isLoading ? (
         <Preloader />
       ) : (
