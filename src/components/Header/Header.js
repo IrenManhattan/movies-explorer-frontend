@@ -1,13 +1,13 @@
-import './Header.css'
-import { React, useState, useEffect } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
-import Navigation from '../Navigation/Navigation'
-import LogoContainer from '../LogoContainer/LogoContainer'
-import ProfileButton from '../ProfileButton/ProfileButton'
-import LoginButton from '../LoginButton/LoginButton'
-import RegButton from '../RegButton/RegButton'
-import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton'
-import BurgerMenu from '../BurgerMenu/BurgerMenu'
+import './Header.css';
+import { React, useState, useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
+import LogoContainer from '../LogoContainer/LogoContainer';
+import ProfileButton from '../ProfileButton/ProfileButton';
+import LoginButton from '../LoginButton/LoginButton';
+import RegButton from '../RegButton/RegButton';
+import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 function Header() {
   const location = useLocation();
@@ -48,36 +48,36 @@ if (width > breakpoint) {
     <Route path="/profile" element={<LogoContainer />}></Route>
   </Routes>
   <div className="header__content">
-      <Routes>
-        <Route
-          path="/"
-          element={[
-            <RegButton key={'index0'} />,
-            <LoginButton key={'index1'} />,
-          ]}
-        ></Route>
-        <Route
-          path="/movies"
-          element={[
-            <Navigation key={'index0'} />,
-            <ProfileButton key={'index1'} />,
-          ]}
-        ></Route>
-        <Route
-          path="/saved-movies"
-          element={[
-            <Navigation key={'index0'} />,
-            <ProfileButton key={'index1'} />,
-          ]}
-        ></Route>
-        <Route
-          path="/profile"
-          element={[
-            <Navigation key={'index0'} />,
-            <ProfileButton key={'index1'} />,
-          ]}
-        ></Route>
-      </Routes>
+    <Routes>
+      <Route
+        path="/"
+        element={[
+          <RegButton key={'index0'} />,
+          <LoginButton key={'index1'} />,
+        ]}
+      ></Route>
+      <Route
+        path="/movies"
+        element={[
+          <Navigation key={'index0'} />,
+          <ProfileButton key={'index1'} />,
+        ]}
+      ></Route>
+      <Route
+        path="/saved-movies"
+        element={[
+          <Navigation key={'index0'} />,
+          <ProfileButton key={'index1'} />,
+        ]}
+      ></Route>
+      <Route
+        path="/profile"
+        element={[
+          <Navigation key={'index0'} />,
+          <ProfileButton key={'index1'} />,
+        ]}
+      ></Route>
+    </Routes>
     </div>
   </header>
     )
@@ -157,4 +157,6 @@ if (width > breakpoint) {
   )
 }
 
-export default Header
+export default Header;
+
+
