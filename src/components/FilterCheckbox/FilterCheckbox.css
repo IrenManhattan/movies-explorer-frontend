@@ -47,7 +47,7 @@
     left: 22px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
     .filter-checkbox__caption {
         font-size: 11px;
         line-height: 135%;

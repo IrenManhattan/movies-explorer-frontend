@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import './BurgerMenu.css';
-import closeIcon from '../../images/close-icon.svg';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ProfileButton from '../ProfileButton/ProfileButton';
 
-function BurgerMenu({ isOpen, handleClick, onClose }) {
+
+function BurgerMenu({ isOpen, onClose }) {
+
   useEffect(() => {
+
     if (!isOpen) return
     const closeByEscape = (event) => {
       if (event.key === 'Escape') {
@@ -17,61 +19,61 @@ function BurgerMenu({ isOpen, handleClick, onClose }) {
   }, [isOpen, onClose])
 
   const closeByOverlay = (event) => {
-      if (event.target === event.currentTarget) {
-        onClose()
-      }
+    if (event.target === event.currentTarget) {
+      onClose()
+    }
   }
 
   return (
     <>
       <div
-        className={isOpen ? 'burger-menu__left' : 'burger-menu__left burger-menu__left_none'}
-        onClick={closeByOverlay}
-      ></div>
-      <div
-      className={
-        isOpen ? 'burger-menu burger-menu_opened' : 'burger-menu'
+        className={
+          isOpen ? 'burger-menu burger-menu_opened' : 'burger-menu burger-menu_closed'
         }
         onClick={closeByOverlay}
       >
-        <button
-          className="burger-menu-close-button"
-          type="button"
-          onClick={handleClick}
-          onClose={onClose}
-      >
-          <img
-            className="burger-menu__close-icon"
-            src={closeIcon}
-            alt="иконка закрытия"
-          />
-        </button>
+
         <nav className="burger-menu-nav">
           <React.Fragment>
-            <Link
-              className="burger-menu-nav__link"
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? 'burger-menu-nav__link_active'
+                  : 'burger-menu-nav__link '
+              }
+              exact="true"
               to="/"
               onClick={onClose}
             >
               Главная
-            </Link>
-            <Link
-              className="burger-menu-nav__link burger-menu-nav__link_active"
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? 'burger-menu-nav__link_active'
+                  : 'burger-menu-nav__link'
+              }
+              exact="true"
               to="/movies"
               onClick={onClose}
             >
               Фильмы
-            </Link>
-            <Link
-              className="burger-menu-nav__link"
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? 'burger-menu-nav__link_active'
+                  : 'burger-menu-nav__link'
+              }
+              exact="true"
               to="/saved-movies"
               onClick={onClose}
             >
               Сохраненные фильмы
-            </Link>
+            </NavLink>
           </React.Fragment>
         </nav>
-        <ProfileButton />
+        <ProfileButton onClose={onClose} />
       </div>
     </>
   )

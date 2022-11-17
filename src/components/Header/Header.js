@@ -9,98 +9,135 @@ import RegButton from '../RegButton/RegButton';
 import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
-function Header() {
+function Header({ loggedIn }) {
   const location = useLocation();
-  const [width, setWidth] = useState(window.innerWidth)
-  const breakpoint = 768
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 768;
 
-useEffect(() => {
-  const handleResizeWindow = () => setWidth(window.innerWidth)
-  window.addEventListener('resize', handleResizeWindow)
-  return () => {
-    // unsubscribe "onComponentDestroy"
-    window.removeEventListener('resize', handleResizeWindow)
+  useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleResizeWindow)
+    return () => {
+      window.removeEventListener('resize', handleResizeWindow)
+    }
+  }, [])
+
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+
+  function handleClickBurgerMenu() {
+    setIsBurgerMenuOpen(!isBurgerMenuOpen)
   }
-}, [])
 
-const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
+  function handleCloseBurgerMenu() {
+    setIsBurgerMenuOpen(false)
+  }
 
-function handleClickBurgerMenu() {
-  setIsBurgerMenuOpen(!isBurgerMenuOpen)
-}
+  if (width > breakpoint) {
 
-function handleCloseBurgerMenu() {
-  setIsBurgerMenuOpen(false)
-}
+    return (
+      <header className={`header header_theme_${location.pathname === '/' ? 'bright' : 'dark'
+        }`}>
+        <div className="header__content" >
+          <Routes>
+            <Route path="/" element={[
+              <LogoContainer key={'index'} />,
+              <Navigation key={'index0'} />]}>
+            </Route>
 
-if (width > breakpoint) {
-  return (
-    <header className={`header header_theme_${location.pathname === '/' ? 'bright' : 'dark'
-  }`}>
+            <Route path="/movies" element={[
+              <LogoContainer key={'index'} />,
+              <Navigation key={'index0'} />]}>
+            </Route>
 
-  <Routes>
-    <Route path="/" element={<LogoContainer />}></Route>
-    <Route path="/movies" element={<LogoContainer />}></Route>
-    <Route
-      path="/saved-movies"
-      element={<LogoContainer />}
-    ></Route>
-    <Route path="/profile" element={<LogoContainer />}></Route>
-  </Routes>
-  <div className="header__content">
-    <Routes>
-      <Route
-        path="/"
-        element={[
-          <RegButton key={'index0'} />,
-          <LoginButton key={'index1'} />,
-        ]}
-      ></Route>
-      <Route
-        path="/movies"
-        element={[
-          <Navigation key={'index0'} />,
-          <ProfileButton key={'index1'} />,
-        ]}
-      ></Route>
-      <Route
-        path="/saved-movies"
-        element={[
-          <Navigation key={'index0'} />,
-          <ProfileButton key={'index1'} />,
-        ]}
-      ></Route>
-      <Route
-        path="/profile"
-        element={[
-          <Navigation key={'index0'} />,
-          <ProfileButton key={'index1'} />,
-        ]}
-      ></Route>
-    </Routes>
-    </div>
-  </header>
+            <Route
+              path="/saved-movies"
+              element={[<LogoContainer key={'index'} />,
+              <Navigation key={'index0'} />]}
+            ></Route>
+            <Route path="/profile" element={[<LogoContainer key={'index'} />,
+            <Navigation key={'index0'} />]}>
+            </Route>
+
+          </Routes>
+          <div className="header__navigation">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  loggedIn
+                    ? [
+                      <ProfileButton key={'index1'} />,
+                    ]
+                    : [
+                      <RegButton key={'index0'} />,
+                      <LoginButton key={'index1'} />,
+                    ]
+                }
+              ></Route>
+
+              <Route
+                path="/movies"
+                element={[
+                  <ProfileButton key={'index1'} />,
+                ]}
+              ></Route>
+              <Route
+                path="/saved-movies"
+                element={[
+                  <ProfileButton key={'index1'} />,
+                ]}
+              ></Route>
+              <Route
+                path="/profile"
+                element={[
+                  <ProfileButton key={'index1'} />,
+                ]}
+              ></Route>
+            </Routes>
+          </div>
+        </div>
+      </header>
     )
   }
 
   return (
     <header className={`header header_theme_${location.pathname === '/' ? 'bright' : 'dark'
       }`} >
-      <Routes>
-        <Route path="/" element={<LogoContainer />}></Route>
-        <Route path="/movies" element={<LogoContainer />}></Route>
-        <Route path="/saved-movies" element={<LogoContainer />}></Route>
-        <Route path="/profile" element={<LogoContainer />}></Route>
-      </Routes>
-        <div className="header__content">
+
+        <div className="header__content" >
+          <Routes>
+            <Route path="/" element={<LogoContainer />}></Route>
+            <Route path="/movies" element={<LogoContainer />}></Route>
+            <Route path="/saved-movies" element={<LogoContainer />}></Route>
+            <Route path="/profile" element={<LogoContainer />}></Route>
+          </Routes>
+
+          <div className={`header__navigation header__navigation_${isBurgerMenuOpen ? 'opened' : 'closed'}`}>
           <Routes>
             <Route
               path="/"
-              element={[
-                <RegButton key={'index0'} />,
-                <LoginButton key={'index1'} />,
-              ]}
+              element={
+                loggedIn
+                  ? [
+                    <BurgerMenuButton
+                      isOpen={isBurgerMenuOpen}
+                      handleClick={handleClickBurgerMenu}
+                      key={'index0'}
+                    />,
+                    <BurgerMenu
+                      isOpen={isBurgerMenuOpen}
+                      handleClick={handleClickBurgerMenu}
+                      onClose={handleCloseBurgerMenu}
+                      key={'index1'}
+                    />,
+                  ]
+                  : [
+                    <RegButton key={'index0'} />,
+                    <LoginButton key={'index1'} />,
+                  ]
+              }
             ></Route>
+
             <Route
               path="/movies"
               element={[
@@ -153,10 +190,9 @@ if (width > breakpoint) {
             ></Route>
           </Routes>
         </div>
+      </div>
     </header>
   )
 }
 
 export default Header;
-
-

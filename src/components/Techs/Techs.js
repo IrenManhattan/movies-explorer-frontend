@@ -4,14 +4,15 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 function Techs() {
   return (
     <section className="technology" id="technology">
-      <SectionTitle title="Технологии" />
-      <div className="technology__content">
+      <div className='technology__container' >
+        <SectionTitle title="Технологии" />
+
         <h2 className="technology__title">7 технологий</h2>
         <p className="technology__subtitle">
           На курсе веб-разработки мы освоили технологии, которые
           применили в дипломном проекте.
         </p>
-        <ul className="lechnology__list">
+        <ul className="technology__list">
           <li className="technology__list-item">HTML</li>
           <li className="technology__list-item">CSS</li>
           <li className="technology__list-item">JS</li>

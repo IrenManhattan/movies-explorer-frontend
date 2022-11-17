@@ -20,7 +20,7 @@
 .seacrh-form__form-container {
   display: flex;
   align-items: center;
-  width: 226px;
+  width: 100%;
   padding: 0px 19px;
 }
 
@@ -66,20 +66,21 @@
   margin-top: 4px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1030px) {
   .search-form {
-      flex-direction: row;
-      width: 100%;
-      margin: 80px 0 120px 0;
+    flex-direction: row;
+    width: 100%;
+    margin: 80px 0 120px 0;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
   .search-form {
     background: none;
     box-shadow: none;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     margin: 78px 10px 32px;
   }
 
@@ -91,7 +92,7 @@
     background-image: none;
   }
 
-  .seacrh-form__form-container{
+  .seacrh-form__form-container {
     height: 44px;
   }
 }
