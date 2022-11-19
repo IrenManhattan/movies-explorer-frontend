@@ -1,29 +1,21 @@
 .movies {
   display: flex;
-  flex-direction: column;
   align-self: center;
+  flex-direction: column;
   width: 89%;
   max-width: 1140px;
 }
 
-.movies__border {
-  margin: 0 70px;
-  border: 1px solid #424242;
-  box-sizing: border-box;
+.movies__message {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: #8b8b8b;
 }
 
 @media screen and (max-width: 768px) {
   .movies {
-    width: 92%;
-  }
-
-  .movies__border {
-    margin: 0 30px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .movies__border {
-    margin: 0 10px;
+     width: 92%;
   }
 }

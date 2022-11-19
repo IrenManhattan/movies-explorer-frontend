@@ -1,25 +1,53 @@
+import { useState, useEffect } from 'react';
 import './SearchForm.css';
-//import searchIcon from '../../images/search-icon.svg';
-import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 
-function SearchForm() {
+function SearchForm({ handleGetMovies, handleGetMoviesTumbler, moviesTumbler, moviesInputSearch }) {
+  const [searchText, setSearchText] = useState('')
+  const [checkbox, setCheckbox] = useState(false)
+
+  useEffect(() => {
+    setCheckbox(moviesTumbler)
+    setSearchText(moviesInputSearch)
+  }, [moviesTumbler, moviesInputSearch])
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    handleGetMovies(searchText, checkbox)
+  }
+
+  function handleInputChange(e) {
+    setSearchText(e.target.value)
+  }
+
+  function handleCheckboxChange() {
+    setCheckbox(!checkbox)
+    handleGetMoviesTumbler(!checkbox)
+  }
+
   return (
-    <div className="search-form">
-      <form className="seacrh-form__form">
-        <div className="seacrh-form__form-container">
-          <input
-            className="search-form__form-input"
-            type="text"
-            placeholder="Фильм"
-            required
-          />
-        </div>
-        <button type="submit" className="search-form__submit">
-        </button>
+    <section className='search'>
+      <form className='search__form' onSubmit={handleSubmit} noValidate>
+        <input
+          className='search__input-text'
+          value={searchText || ''}
+          onChange={handleInputChange}
+          type='text'
+          name='search'
+          placeholder='Фильм' required />
+        <button className='search__button' type='submit' />
       </form>
-      <FilterCheckbox />
-    </div>
-  )
-}
+      <div className='search__toggle'>
+        <input
+          className='search__input-checkbox'
+          onChange={handleCheckboxChange}
+          value={checkbox}
+          checked={!checkbox}
+          type='checkbox'
+          required  />
+        <p className='search__text'>Короткометражки</p>
+      </div>
+    </section>
+  );
+};
 
 export default SearchForm;
