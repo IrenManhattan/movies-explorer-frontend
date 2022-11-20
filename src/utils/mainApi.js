@@ -112,7 +112,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  baseUrl: 'api-iren-movies.nomoredomains.icu',
+  baseUrl: 'https://api-iren-movies.nomoredomains.icu',
 })
 
 export default mainApi;
