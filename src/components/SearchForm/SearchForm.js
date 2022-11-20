@@ -1,53 +1,95 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import searchIcon from '../../images/search-icon.svg';
 import './SearchForm.css';
 
-function SearchForm({ handleGetMovies, handleGetMoviesTumbler, moviesTumbler, moviesInputSearch }) {
-  const [searchText, setSearchText] = useState('')
-  const [checkbox, setCheckbox] = useState(false)
+
+
+function SearchForm({ onSearchMovies, savedMoviesRoute }) {
+  const [keyWord, setKeyWord] = useState('')
+  const [checkBoxStatus, setCheckBoxStatus] = useState(false)
+
+  const [error, setError] = useState(false)
 
   useEffect(() => {
-    setCheckbox(moviesTumbler)
-    setSearchText(moviesInputSearch)
-  }, [moviesTumbler, moviesInputSearch])
+    if (!savedMoviesRoute) {
+      const query = localStorage.getItem('keyWord')
 
-  function handleSubmit(e) {
+      if (query) {
+        setKeyWord(query)
+      }
+    }
+  }, [savedMoviesRoute])
+
+  useEffect(() => {
+    if (!savedMoviesRoute) {
+      const status = localStorage.getItem('checkBoxStatus')
+
+      if (JSON.parse(status) === true) {
+        setCheckBoxStatus(true)
+      } else {
+        setCheckBoxStatus(false)
+      }
+    }
+  }, [savedMoviesRoute])
+
+  const handleSubmitSearchForm = (e) => {
     e.preventDefault()
-    handleGetMovies(searchText, checkbox)
+    if (!keyWord) {
+      setError(true)
+    } else {
+      setError(false)
+      onSearchMovies(keyWord, checkBoxStatus)
+    }
   }
 
-  function handleInputChange(e) {
-    setSearchText(e.target.value)
+  const handleSearchInputChange = (e) => {
+    setKeyWord(e.target.value)
+    setError(false)
   }
 
-  function handleCheckboxChange() {
-    setCheckbox(!checkbox)
-    handleGetMoviesTumbler(!checkbox)
+  const handleCheckBoxChange = (e) => {
+    setCheckBoxStatus(e.target.checked)
+    onSearchMovies(keyWord, e.target.checked)
   }
 
   return (
-    <section className='search'>
-      <form className='search__form' onSubmit={handleSubmit} noValidate>
-        <input
-          className='search__input-text'
-          value={searchText || ''}
-          onChange={handleInputChange}
-          type='text'
-          name='search'
-          placeholder='Фильм' required />
-        <button className='search__button' type='submit' />
+    <div className="search-form">
+      <form className="seacrh-form__form"
+        noValidate
+        onSubmit={handleSubmitSearchForm}>
+
+        <div className="seacrh-form__form-container">
+          <input
+            className="search-form__form-input"
+            type="text"
+            placeholder="Фильм"
+            required
+            onChange={handleSearchInputChange}
+            autoComplete="off"
+            value={keyWord || ''}
+          />
+          <span className="search-form__error">
+            {error ? ' Нужно ввести ключевое слово.' : ''}
+          </span>
+        </div>
+        <button type="submit" className="search-form__submit">
+          <img
+            className="search-form__submit-icon"
+            src={searchIcon}
+            alt="иконка стрелочка"
+          />
+        </button>
       </form>
-      <div className='search__toggle'>
-        <input
-          className='search__input-checkbox'
-          onChange={handleCheckboxChange}
-          value={checkbox}
-          checked={!checkbox}
-          type='checkbox'
-          required  />
-        <p className='search__text'>Короткометражки</p>
-      </div>
-    </section>
-  );
-};
+      <label className="search-form-filter">
+        <input className="search-form-filter__checkbox"
+          type="checkbox"
+          checked={checkBoxStatus}
+          onChange={handleCheckBoxChange} />
+        <span className="search-form-filter__text">Короткометражки</span>
+      </label>
+    </div>
+  )
+}
+
 
 export default SearchForm;
