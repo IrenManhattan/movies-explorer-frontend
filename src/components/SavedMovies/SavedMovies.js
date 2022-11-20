@@ -36,6 +36,7 @@ function SavedMovies({
     } else {
       setSearchedMovies(moviesCardList)
     }
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moviesCardList])
 
   return (
