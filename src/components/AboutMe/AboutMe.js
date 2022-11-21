@@ -26,7 +26,7 @@ function AboutMe() {
             <li className="about-me__article-link">
               <a
                 className="about-me__article-link about-me__article-link-vk"
-                href="https://t.me/IrenManhatta"
+                href="https://t.me/IrenManhattan"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -47,7 +47,7 @@ function AboutMe() {
         </div>
         <div className="about-me__article-photo">
           <img
-            className="about-me__article-pfoto-img"
+            className="about-me__article-photo-img"
             src={photo}
             alt="мое фото"
           ></img>

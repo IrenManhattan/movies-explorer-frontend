@@ -1,8 +1,8 @@
-.movies-card__delete-button {
+.movies-card__delete-btn {
   padding: 0;
   border: none;
   background-color: #222222;
-  background-image: url(../../images/remove-icon.svg);
+  background-image: url(../../images//remove-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 30px;
@@ -12,7 +12,7 @@
   transition: opacity linear 0.5s;
 }
 
-.movies-card__delete-button:hover {
+.movies-card__delete-btn:hover {
   opacity: 0.8;
   transition: opacity linear 0.5s;
 }

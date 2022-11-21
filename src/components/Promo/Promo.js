@@ -17,7 +17,7 @@ export default function Promo() {
           href="https://practicum.yandex.ru/web/"
           target="_blank"
           rel="noopener noreferrer"
-          className="promo__learn-more-link"
+          className="promo__learn-more-url"
         >
           Узнать больше
         </a>

@@ -7,9 +7,9 @@ function Profile({ onUpdateProfile, onLogout, message }) {
   const currentUser = React.useContext(CurrentUserContext);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [isInputDisabled, setIsInputDisabled] = useState(true);
   const [errorName, setErrorName] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
-  const [isInputDisabled, setIsInputDisabled] = useState(true);
   const [isFormValid, setIsFormValid] = useState(false);
   const [isMessage, setIsMessage] = useState(false);
 
@@ -39,7 +39,7 @@ function Profile({ onUpdateProfile, onLogout, message }) {
       if (!e.target.value.length) {
         setErrorEmail('Электронная почта должна быть заполнена.')
       } else if (!validEmail) {
-        setErrorEmail('Неверный формат электронной почты.')
+        setErrorEmail('Неверный формат email')
       } else {
         setErrorEmail('')
       }

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AuthFormHeader from '../AuthFormHeader/AuthFormHeader';
 import './AuthForm.css';
+import AuthFormHeader from '../AuthFormHeader/AuthFormHeader';
+
 
 function AuthForm({
   children,

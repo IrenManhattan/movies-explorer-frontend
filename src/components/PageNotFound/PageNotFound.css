@@ -14,7 +14,7 @@
   line-height: 100%;
 }
 
-.page-not-found__go-back {
+.page-not-found__return {
   background-color: transparent;
   border: none;
   color: #4285f4;
@@ -28,7 +28,7 @@
   transition: opacity linear 0.5s;
 }
 
-.page-not-found__go-back:hover {
+.page-not-found__return:hover {
 opacity: 0.7;
 transition: opacity linear 0.5s;
 }
@@ -38,7 +38,7 @@ transition: opacity linear 0.5s;
     margin: 408px auto 0;
   }
 
-  .page-not-found__go-back {
+  .page-not-found__return {
     margin: 0 auto 222px;
   }
 }
@@ -54,7 +54,7 @@ transition: opacity linear 0.5s;
     font-size: 13px;
   }
 
-  .page-not-found__go-back {
+  .page-not-found__return {
     font-size: 12px;
     margin: 0 auto 30px;
   }

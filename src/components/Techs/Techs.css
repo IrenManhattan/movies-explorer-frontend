@@ -1,4 +1,4 @@
-.technology {
+.tech {
   background-color: #272727;
   margin: 0;
   display: flex;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.technology__container {
+.tech__container {
 max-width: 1280px;
 width: 100%;
 padding: 100px 70px;
@@ -17,7 +17,7 @@ align-items: center;
 flex-direction: column;
 }
 
-.technology__title {
+.tech__title {
   font-size: 50px;
   font-weight: 400;
   line-height: 96%;
@@ -25,7 +25,7 @@ flex-direction: column;
   margin: 90px 0 26px;
 }
 
-.technology__subtitle {
+.tech__subtitle {
   margin: 0;
   font-size: 14px;
   font-weight: 400;
@@ -35,7 +35,7 @@ flex-direction: column;
   text-align: center;
 }
 
-.technology__list {
+.tech__list {
   list-style: none;
   margin: 100px 0 0;
   padding: 0;
@@ -47,7 +47,7 @@ flex-direction: column;
   gap: 10px;
 }
 
-.technology__list-item {
+.tech__list-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,32 +62,32 @@ flex-direction: column;
   transition: transform linear 0.5s;
 }
 
-.technology__list-item:hover {
+.tech__list-item:hover {
   transform: scale(1.1);
   transition: transform linear 0.5s;
 }
 
 @media screen and (max-width: 768px) {
-  .technology__container {
+  .tech__container {
     padding: 90px 50px;
   }
 
-  .technology__title {
+  .tech__title {
     margin: 80px 0 22px;
   }
 
-  .technology__subtitle {
+  .tech__subtitle {
     font-size: 12px;
     line-height: 124%;
   }
 
-  .lechnology__list {
+  .lech__list {
     margin: 83px 0 90px;
     grid-template-columns: repeat(auto-fit, 84px);
     max-width: 648px;
   }
 
-  .technology__list-item {
+  .tech__list-item {
     max-width: 84px;
     height: 57px;
     font-size: 12px;
@@ -95,26 +95,26 @@ flex-direction: column;
 }
 
 @media screen and (max-width: 450px) {
-  .technology {
+  .tech {
     background-color: #202020;
   }
 
-  .technology__container{
+  .tech__container{
     padding: 70px 18px;
   }
 
-  .technology__title {
+  .tech__title {
     font-size: 30px;
     line-height: 100%;
     margin: 60px 0 24px;
   }
 
-  .technology__subtitle {
+  .tech__subtitle {
     font-size: 11px;
     line-height: 120%;
   }
 
-  .lechnology__list {
+  .lech__list {
     margin: 50px 0 70px;
   }
 }

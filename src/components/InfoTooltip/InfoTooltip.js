@@ -1,8 +1,8 @@
 import './InfoTooltip.css';
 import React from 'react';
 import { useEffect } from 'react';
-import Success from '../../images/success.svg';
-import Fail from '../../images/fail.svg';
+import fail from '../../images/fail.svg';
+import success from '../../images/success.svg';
 
 function InfoTooltip({ onClose, isSuccess, errorMessage, isInfoTooltipOpen }) {
   useEffect(() => {
@@ -36,7 +36,7 @@ function InfoTooltip({ onClose, isSuccess, errorMessage, isInfoTooltipOpen }) {
         <div className="popup__form-container">
           <img
             className="popup__image"
-            src={isSuccess ? Success : Fail}
+            src={isSuccess ? success : fail}
             alt={isSuccess ? 'Иконка Успешно' : 'Иконка Ошибка'}
           />
           {isSuccess ? (

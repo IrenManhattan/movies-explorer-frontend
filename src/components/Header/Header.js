@@ -1,11 +1,11 @@
 import './Header.css';
 import { React, useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Navigation from '../Navigation/Navigation';
-import LogoContainer from '../LogoContainer/LogoContainer';
 import ProfileButton from '../ProfileButton/ProfileButton';
 import LoginButton from '../LoginButton/LoginButton';
 import RegButton from '../RegButton/RegButton';
+import Navigation from '../Navigation/Navigation';
+import LogoContainer from '../LogoContainer/LogoContainer';
 import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
@@ -18,7 +18,6 @@ function Header({ loggedIn }) {
     const handleResizeWindow = () => setWidth(window.innerWidth)
     window.addEventListener('resize', handleResizeWindow)
     return () => {
-      // unsubscribe "onComponentDestroy"
       window.removeEventListener('resize', handleResizeWindow)
     }
   }, [])

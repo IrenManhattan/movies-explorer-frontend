@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, matchPath } from 'react-router';
-import DelButton from '../DelButton/DelButton';
-import MarkButton from '../MarkButton/MarkButton';
+import DelBtn from '../DelBtn/DelBtn';
+import ChoiceButton from '../ChoiceButton/ChoiceButton';
 import { getTimeFromMin } from '../../utils/utils';
 import './MoviesCard.css';
 
@@ -34,13 +34,13 @@ function MoviesCard({ moviesCard, moviesCardList, onSave, onDelete }) {
           </p>
         </div>
         {matchPath({ path: '/movies' }, location.pathname) && (
-          <MarkButton
+          <ChoiceButton
             isSavedMovie={isSaved}
             onClick={handleClickMovie}
           />
         )}
         {matchPath({ path: '/saved-movies' }, location.pathname) && (
-          <DelButton onClick={handleDeleteClick} />
+          <DelBtn onClick={handleDeleteClick} />
         )}
       </div>
       <a

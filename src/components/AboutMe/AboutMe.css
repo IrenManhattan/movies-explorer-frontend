@@ -80,9 +80,7 @@
   border-radius: 10px;
 }
 
-
-
-.about-me__article-pfoto-img {
+.about-me__article-photo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;

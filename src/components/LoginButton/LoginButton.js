@@ -1,5 +1,5 @@
-import './LoginButton.css';
 import { Link } from 'react-router-dom';
+import './LoginButton.css';
 import Button from '../Button/Button';
 
 function LoginButton() {

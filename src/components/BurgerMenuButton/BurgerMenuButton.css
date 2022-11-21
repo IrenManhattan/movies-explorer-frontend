@@ -2,12 +2,12 @@
   display: none;
   align-items: center;
   position: absolute;
-  top: 27px;
-  right: 38px;
   width: 28px;
   height: 20px;
   cursor: pointer;
   z-index: 6;
+  top: 27px;
+  right: 38px;
   transition: all .3s ease;
   border: none;
   background: none;

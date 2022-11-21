@@ -160,7 +160,7 @@ function App() {
         console.log(err)
         if (err.code === 409) {
           setProfileMessage(
-            'Пользователь с данным email уже существует'
+            'Пользователь с таким email уже существует'
             )
         } else {
           setProfileMessage('При обновлении данных возникла ошибка')

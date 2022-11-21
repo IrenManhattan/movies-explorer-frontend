@@ -6,7 +6,7 @@ function AuthFormHeader({ title }) {
   return (
     <div className="auth-form-header">
       <Logo />
-      <h2 className="auth-form__title">{title}</h2>
+      <h2 className="auth-form__header-title">{title}</h2>
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import AuthForm from '../AuthForm/AuthForm';
+import React, { useEffect, useState } from 'react';
 import Input from '../Input/Input';
 import InfoTooltip from '../InfoTooltip/InfoTooltip';
 
@@ -7,11 +7,11 @@ function Register({ onRegister, isSuccess, isRequestSend, isInfoTooltipOpen, err
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [isInputDisabled, setIsInputDisabled] = useState(true);
+  const [isFormValid, setIsFormValid] = useState(false);
   const [errorName, setErrorName] = useState('');
   const [errorPassword, setErrorPassword] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
-  const [isInputDisabled, setIsInputDisabled] = useState(true);
-  const [isFormValid, setIsFormValid] = useState(false);
   const isDisabled = !isFormValid || !isRequestSend
 
   const handleChangeName = (e) => {

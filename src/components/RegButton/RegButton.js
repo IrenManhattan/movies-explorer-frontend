@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 
 function RegButton() {
   return (
-    <Link className="reg-button__link" to="/signup">
+    <Link className="reg-button__url" to="/signup">
       <Button buttonText="Регистрация" />
     </Link>
   )

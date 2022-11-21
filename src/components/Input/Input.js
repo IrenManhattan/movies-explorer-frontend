@@ -19,7 +19,7 @@ function Input({
         className={
           isValidInput
             ? 'input__item'
-            : 'input__item input__item_errored'
+            : 'input__item input__item_error'
         }
         name={name}
         type={type}

@@ -10,7 +10,7 @@ function PageNotFound() {
       <p className="page-not-found__caption">Страница не найдена</p>
       <button
         type="button"
-        className="page-not-found__go-back"
+        className="page-not-found__return"
         onClick={() => navigate(-1)}
       >
         Назад

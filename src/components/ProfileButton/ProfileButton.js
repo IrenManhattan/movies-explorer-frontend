@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 function ProfileButton({ onClose }) {
   return (
     <NavLink
-      className="profile-button__link"
+      className="profile-button__url"
       to="/profile"
       onClick={onClose}>
       Аккаунт

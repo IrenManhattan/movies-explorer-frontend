@@ -38,7 +38,7 @@ function BurgerMenu({ isOpen, onClose }) {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'burger-menu-nav__link_active'
+                  ? 'burger-menu-nav__link-active'
                   : 'burger-menu-nav__link '
               }
               exact="true"
@@ -50,7 +50,7 @@ function BurgerMenu({ isOpen, onClose }) {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'burger-menu-nav__link_active'
+                  ? 'burger-menu-nav__link-active'
                   : 'burger-menu-nav__link'
               }
               exact="true"
@@ -62,7 +62,7 @@ function BurgerMenu({ isOpen, onClose }) {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'burger-menu-nav__link_active'
+                  ? 'burger-menu-nav__link-active'
                   : 'burger-menu-nav__link'
               }
               exact="true"
