@@ -26,8 +26,20 @@ function MoviesCard({ moviesCard, moviesCardList, onSave, onDelete }) {
 
   return (
     <li className="movies-card">
-      <div className="movies-card__head">
-        <div className="movies-card__head-info">
+      <a
+        className="movies-card__link"
+        href={moviesCard.trailerLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          className="movies-card__image"
+          src={moviesCard.image}
+          alt={`Фото к фильму ${moviesCard.nameRu}`}
+        />
+      </a>
+      <div className="movies-card__footer">
+        <div className="movies-card__footer-info">
           <h2 className="movies-card__title">{moviesCard.nameRU}</h2>
           <p className="movies-card__duration">
             {getTimeFromMin(moviesCard.duration)}
@@ -43,18 +55,6 @@ function MoviesCard({ moviesCard, moviesCardList, onSave, onDelete }) {
           <DelBtn onClick={handleDeleteClick} />
         )}
       </div>
-      <a
-        className="movies-card__link"
-        href={moviesCard.trailerLink}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img
-          className="movies-card__image"
-          src={moviesCard.image}
-          alt={`Фото к фильму ${moviesCard.nameRu}`}
-        />
-      </a>
     </li>
   )
 }
