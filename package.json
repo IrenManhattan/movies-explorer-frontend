@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint .",
-    "deploy": "npm run build && scp -r ./build/* iren_galygina@51.250.89.217:/home/iren_galygina/movies-explorer-frontend"
+    "deploy": "npm run build && scp -r ./build/* iren_galygina@51.250.89.217:/home/iren_galygina/movies-explorer-api/frontend"
   },
   "eslintConfig": {
     "extends": [
