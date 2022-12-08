@@ -1,0 +1,23 @@
+.movies-card__choice-button {
+  padding: 0;
+  border: none;
+  background-color: #222222;
+  background-image: url(../../images/choice-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 36px;
+  cursor: pointer;
+  transition: opacity linear 0.5s;
+}
+
+.movies-card__choice-button:hover {
+  opacity: 0.8;
+  transition: opacity linear 0.5s;
+}
+
+.movies-card__choice-button_marked {
+  background-color: #222222;
+  background-image: url(../../images/choice-icon-marked.svg);
+}

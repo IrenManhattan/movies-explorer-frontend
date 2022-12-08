@@ -1,0 +1,43 @@
+.profile-button__url {
+  display: flex;
+  border-radius: 40px;
+  box-shadow: 0 3px 14pxrgba(0, 0, 0, .08);
+  font-size: 14px;
+  line-height: 1.14;
+  min-height: 30px;
+  padding-right: 37px;
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  align-items: center;
+  color: #fff;
+}
+
+.profile-button__url:after {
+  background-color: #313131;
+  background-image: url(/src/images/icon-main.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  content: "";
+  height: 30px;
+  position: absolute;
+  width: 30px;
+  top: 0;
+  right: 0;
+}
+
+.profile-button__url:hover {
+  opacity: 0.7;
+  transition: opacity linear 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-button__url {
+    padding-left: 15px;
+  }
+
+  .profile-button__url:last-child {
+    margin: auto 0 90px;
+  }
+}

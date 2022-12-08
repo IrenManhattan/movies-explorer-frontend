@@ -1,0 +1,21 @@
+.movies {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  width: 89%;
+  max-width: 1140px;
+}
+
+.movies__message {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: #8b8b8b;
+}
+
+@media screen and (max-width: 768px) {
+  .movies {
+     width: 92%;
+  }
+}

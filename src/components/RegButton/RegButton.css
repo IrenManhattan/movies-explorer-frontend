@@ -1,0 +1,9 @@
+.reg-button__url {
+
+}
+
+.reg-button__url:hover {
+  opacity: 0.7;
+  transition: opacity linear 0.5s;
+  cursor: pointer;
+}
